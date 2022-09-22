@@ -5,10 +5,12 @@ import { Directive, HostBinding, HostListener, Renderer2 } from '@angular/core';
 })
 export class DropDownDirective {
   @HostBinding('class.open') isOpen: boolean = false;
+  // HostBinding('value') myValue; is exactly the same as [value]="myValue"
 
   @HostListener('click') toggleOpen() {
+    // HostListener('click') myClick(){ } is exactly the same as (click)="myClick()"
     this.isOpen = !this.isOpen;
   }
-
-  constructor(private render: Renderer2) {}
 }
+
+// comments are form stack overflow
